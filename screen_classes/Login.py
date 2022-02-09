@@ -29,3 +29,5 @@ def check_login_details(username, password):
 
     if password_numbers_sum != username_numbers_sum:
         return WRONG_USERNAME_OR_PASSWORD_ERROR
+
+    return Employee(employee[0], employee[1], employee[2], employee[3], employee[4], employee[5])
