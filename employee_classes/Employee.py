@@ -12,7 +12,7 @@ class Employee:
         self._role = role
 
     # Getters
-    def get_fist_name(self):
+    def get_first_name(self):
         return self.__first_name
 
     def get_last_name(self):
@@ -21,7 +21,7 @@ class Employee:
     def get_id_number(self):
         return self.__id_number
 
-    def get_employee_id(self):
+    def get_employees_id(self):
         return self._employee_id
 
     def get_manager_id(self):
