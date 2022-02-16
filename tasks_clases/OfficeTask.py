@@ -9,24 +9,23 @@ class OfficeTask(Task):
         self.__file = file
         self.__involvement = involvement
 
-        def complete_task(self, security_code):
-            flag = False
-            if len(security_code) == 3:
-                return False
-
-            if security_code[0] == folder[0] and security_code[1] == folder[0]:
-                if security_code[2].isnumeric():
-                    if security_code[2] % 2 == 0 and involvement == "yes":
-                        flag = True
-                    elif security_code[2] % 2 == 1 and involvement == "no":
-                        flag = True
-
-            if flag:
-                Database.update_tasks_status(self._task_id)
-                self.status = "v"
-                return True
+    def complete_task(self, security_code):
+        flag = False
+        if len(security_code) == 3:
             return False
 
+        if security_code[0] == self.__folder[0] and security_code[1] == self.__folder[0]:
+            if security_code[2].isnumeric():
+                if security_code[2] % 2 == 0 and self.__involvement == "yes":
+                    flag = True
+                elif security_code[2] % 2 == 1 and self.__involvement == "no":
+                    flag = True
 
-        def get_description(self):
-            return f"{self.__folder} -> {self.__file} ({self.__involvement})"
+        if flag:
+            Database.update_tasks_status(self._task_id)
+            self._status = "v"
+            return True
+        return False
+
+    def get_description(self):
+        return f"{self.__folder} -> {self.__file} ({self.__involvement})"
