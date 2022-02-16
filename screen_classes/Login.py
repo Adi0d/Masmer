@@ -11,7 +11,7 @@ def check_login_details(username, password):
         return WRONG_USERNAME_OR_PASSWORD_ERROR
     employee = Database.get_employee_by_employees_id(username[:4])
     if employee is None:
-        return WRONG_USERNAME_OR_PASSWORD_ERROR ;
+        return WRONG_USERNAME_OR_PASSWORD_ERROR
     if employee[4] != username[4:8]:
         return WRONG_USERNAME_OR_PASSWORD_ERROR
 
