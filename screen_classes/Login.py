@@ -1,6 +1,7 @@
 from employee_classes.Head import *
 import Database
 from constants import *
+from tasks_clases import FieldTask
 
 
 def check_login_details(username, password):
@@ -29,7 +30,6 @@ def check_login_details(username, password):
 
     if password_numbers_sum != username_numbers_sum:
         return WRONG_USERNAME_OR_PASSWORD_ERROR
-
     if employee[5] == 'e':
         return Employee(employee[0], employee[1], employee[2], employee[3], employee[4], employee[5])
     if employee[5] == 'm':

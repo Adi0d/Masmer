@@ -8,9 +8,9 @@ class Task:
         self._task_type = task_type
         self._employees_id = employees_id
 
-    # @abstractmethod
-    # def complete_task(self, security_code):
-    #     pass
+    @abstractmethod
+    def complete_task(self, security_code):
+        pass
 
     @abstractmethod
     def get_description(self):
