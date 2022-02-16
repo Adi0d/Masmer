@@ -1,7 +1,6 @@
 from employee_classes.Head import *
 import Database
 from constants import *
-from tasks_clases import FieldTask
 
 
 def check_login_details(username, password):
