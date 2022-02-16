@@ -11,7 +11,7 @@ class OfficeTask(Task):
 
     def complete_task(self, security_code):
         flag = False
-        if len(security_code) == 3:
+        if len(security_code) != 3:
             return False
 
         if security_code[0] == self.__folder[0] and security_code[1] == self.__folder[0]:
