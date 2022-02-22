@@ -14,7 +14,7 @@ class OfficeTask(Task):
         if len(security_code) != 3:
             return False
 
-        if security_code[0] == self.__folder[0] and security_code[1] == self.__folder[0]:
+        if security_code[0] == self.__folder[0] and security_code[1] == self.__file[0]:
             if security_code[2].isnumeric():
                 if security_code[2] % 2 == 0 and self.__involvement == "yes":
                     flag = True

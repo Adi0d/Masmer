@@ -28,6 +28,5 @@ class FieldTask(Task):
             return True
         return False
 
-
     def get_description(self):
         return f"{self.__country}: {self.__city} [{self.__target}]"

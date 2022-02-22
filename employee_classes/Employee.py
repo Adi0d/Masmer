@@ -3,14 +3,14 @@ from constants import *
 
 
 class Employee:
-    def __init__(self, first_name, last_name, id_number, employee_id, manager_id, role, list_of_tasks):
+    def __init__(self, first_name, last_name, id_number, employee_id, manager_id, role):
         self.__first_name = first_name
         self.__last_name = last_name
         self.__id_number = id_number
         self._employee_id = employee_id
         self._manager_id = manager_id
         self._role = role
-        self._list_of_tasks = list_of_tasks
+        self._list_of_tasks = Database.get_list_of_tasks_from_database(employee_id)
 
     # Getters
     def get_first_name(self):
@@ -32,5 +32,5 @@ class Employee:
         return self._role
 
     def get_list_of_tasks(self):
-        return self._list_of_task
+        return self._list_of_tasks
 
