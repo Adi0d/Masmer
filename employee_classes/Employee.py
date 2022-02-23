@@ -34,3 +34,15 @@ class Employee:
     def get_list_of_tasks(self):
         return self._list_of_tasks
 
+    def complete_employees_task(self, task_id, security_id):
+        if task_id == "" or security_id == "":
+            return EMPTY_FIELDS_ERROR
+        is_one_correct = False
+        for task in self._list_of_tasks:
+            if task.get_task_id() == task_id:
+                is_one_correct = True
+                if task.complete_task():
+                    return "done"
+        if not is_one_correct:
+            return INCORRECT_SECURITY_KEY_ERROR
+        return TASK_DOESNT_EXIST_ERROR
