@@ -18,3 +18,13 @@ class Manager(Employee):
                 for task in tasks:
                     if task.get_task_id() == task_id:
                         tasks.remove(task)
+                        break
+                return "done"
+            else:
+                return TASK_DOESNT_EXIST_ERROR
+        for employee in self._list_of_employees:
+            if employee.get_employees_id() == employees_id:
+                ans = Database.get_list_of_tasks_from_database(employees_id)
+                if ans:
+                    return "done"
+                return TASK_DOESNT_EXIST_ERROR
